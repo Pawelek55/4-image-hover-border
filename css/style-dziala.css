@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+}
+
+#photo{
+    position: relative;
+    width: 650px;
+    margin-top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#photo #mask{
+    height: 100%;
+    width: 100%;
+    transition: all 2s;
+    position: absolute;
+    top: 0;
+    opacity: 0; 
+}
+
+#photo #mask:hover{
+    opacity: 1;
+    transition: all 2s;
+    transition-timing-function: linear;
+    font-size: 60px;
+}
+
+#photo #mask::before{
+    content: "";
+    width: 102%;
+    height: 0;
+    background-color: transparent;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -12px;
+    border: 5px solid rgba(0,0,0,1);
+    border-bottom: none;
+    transition: all 2s;
+
+}
+
+#photo #mask:hover::before{
+    height: 51%;
+    border-bottom: none;
+    transition: all 2s;
+}
+
+#photo #mask::after{
+    content: "";
+    width: 102%;
+    height: 0%;
+    background-color: transparent;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    border: 5px solid rgba(0,0,0,1);
+    margin-left: -12px;
+    margin-top: 6px;
+    border-top: none;
+    transition: all 2s;
+}
+
+
+#photo #mask:hover::after{
+    height: 51%;
+    border-top: none;
+    transition: all 2s;
+}
+
+
+#photo #mask p{
+    color: rgba(255,255,255,1);
+    position: absolute; 
+/*    Poprzez właściwość position element blokowy traci swoje 100% szerokości*/
+    width: 103%;
+    background-color: rgba(0,0,0,0.6);
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 0 0 -10px;
+    text-align: center;
+}
